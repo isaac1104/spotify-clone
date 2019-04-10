@@ -6,6 +6,10 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  displayName: String,
+  profileUrl: String,
+  followers: Number,
+  photo: String,
   lastSignedIn: Number
 });
 
