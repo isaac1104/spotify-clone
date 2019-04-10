@@ -5,3 +5,7 @@ body {
   padding: 0;
   background-color: #0f0f0f;
 }
+
+h1, h2, h3, h4, h5, h6, p, .ant-typography {
+  color: #ffffff !important;
+}

@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import { Typography } from 'antd';
+
+const { Text, Title } = Typography;
 
 class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Home</h1>
+        <Title>Home</Title>
+        <Text>Welcome</Text>
       </div>
     );
   }
