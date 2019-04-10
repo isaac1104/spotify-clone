@@ -23,7 +23,6 @@ passport.use(
     },
     async (accessToken, refreshToken, expires_in, profile, done) => {
       const { id, displayName, profileUrl, followers, photos } = profile;
-      console.log(profile);
       const existingUser = await User.findOne({ spotifyId: id });
       if (existingUser) {
         return done(null, existingUser);

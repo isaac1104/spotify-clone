@@ -1,4 +1,7 @@
 import React from 'react';
+import { Button, Typography } from 'antd';
+
+const { Title } = Typography;
 
 const styles = {
   container: {
@@ -7,15 +10,18 @@ const styles = {
     alignItems: 'center',
     height: '100vh',
     backgroundColor: '#0f0f0f',
-    color: '#ffffff',
     textAlign: 'center'
+  },
+  text: {
+    color: '#ffffff'
   }
 };
 
 const Landing = () => (
   <div style={styles.container}>
     <div>
-      <h1>Welcome to Spotify Clone</h1>
+      <Title style={styles.text}>Welcome to Spotify Clone</Title>
+      <Button href='/auth/spotify'>Sign in with Spotify</Button>
     </div>
   </div>
 );
