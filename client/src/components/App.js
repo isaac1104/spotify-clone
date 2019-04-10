@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Spin } from 'antd';
 import { fetchCurrentUserData } from '../actions';
+import requireAuth from '../utils/requireAuth';
 
 const Landing = lazy(() => import('./Landing'));
 const Home = lazy(() => import('./Home'));
@@ -42,7 +43,7 @@ class App extends Component {
                 }
               }}
             />
-            <Route exact path='/home' component={Home} />
+            <Route exact path='/home' component={requireAuth(Home)} />
           </Switch>
         </Suspense>
       </BrowserRouter>
