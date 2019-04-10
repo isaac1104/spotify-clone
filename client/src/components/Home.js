@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Typography, Spin } from 'antd';
+import { fetchSavedTracksData } from '../actions';
 
 const { Title } = Typography;
 
 class Home extends Component {
+  componentDidMount() {
+    this.props.fetchSavedTracksData();
+  }
+
   renderUserInfo() {
     const { data: { displayName, photo }, isFetching } = this.props.currentUser;
     if (isFetching) {
@@ -20,6 +25,7 @@ class Home extends Component {
   }
 
   render() {
+    console.log(this.props.savedTracks);
     return (
       <>
         {this.renderUserInfo()}
@@ -28,10 +34,11 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ currentUser }) => {
+const mapStateToProps = ({ currentUser, savedTracks }) => {
   return {
-    currentUser
+    currentUser,
+    savedTracks
   };
 };
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, { fetchSavedTracksData })(Home);
