@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Typography } from 'antd';
 
-const { Text, Title } = Typography;
+const { Title } = Typography;
 
 class Home extends Component {
   render() {
-    console.log(this.props.currentUser);
+    const { displayName, photo } = this.props.currentUser.data
     return (
       <div>
-        <Title>Home</Title>
-        <Text>Welcome</Text>
+        <Title>Welcome, {displayName}</Title>
+        <img src={photo} alt={displayName} />
       </div>
     );
   }

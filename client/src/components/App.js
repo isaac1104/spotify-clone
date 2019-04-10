@@ -1,11 +1,17 @@
 import React, { Component, Suspense, lazy } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Spin } from 'antd';
+import { fetchCurrentUserData } from '../actions';
 
 const Landing = lazy(() => import('./Landing'));
 const Home = lazy(() => import('./Home'));
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchCurrentUserData();
+  }
+
   render() {
     const styles = {
       container: {
@@ -24,7 +30,18 @@ class App extends Component {
           </div>
         )}>
           <Switch>
-            <Route exact path='/' component={Landing} />
+            <Route
+              exact
+              path='/'
+              render={() => {
+                const { data } = this.props.currentUser;
+                if (data) {
+                  return <Redirect to='/home' />;
+                } else {
+                  return <Landing />;
+                }
+              }}
+            />
             <Route exact path='/home' component={Home} />
           </Switch>
         </Suspense>
@@ -33,4 +50,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser
+  };
+};
+
+export default connect(mapStateToProps, { fetchCurrentUserData })(App);
