@@ -25,6 +25,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/auth_route')(app);
+require('./routes/saved_tracks_api')(app);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
