@@ -6,6 +6,10 @@ body {
   background-color: #0f0f0f;
 }
 
-h1, h2, h3, h4, h5, h6, p, .ant-typography {
-  color: #ffffff !important;
+h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.ant-typography, h6.ant-typography, p, .ant-typography {
+  color: #ffffff;
+}
+
+.ant-spin-dot-item {
+  background-color: #00aca4 !important;
 }

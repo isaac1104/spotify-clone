@@ -13,7 +13,7 @@ const styles = {
     textAlign: 'center'
   },
   text: {
-    color: '#1db954'
+    color: '#00aca4'
   },
   strike: {
     color: 'tomato'
