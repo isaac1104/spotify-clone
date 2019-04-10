@@ -28,6 +28,7 @@ passport.use(
         return done(null, existingUser);
       }
       const user = await new User({
+        accessToken,
         profileUrl,
         followers,
         spotifyId: id,

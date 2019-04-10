@@ -6,6 +6,7 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  accessToken: String,
   displayName: String,
   profileUrl: String,
   followers: Number,
