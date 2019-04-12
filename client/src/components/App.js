@@ -17,22 +17,13 @@ class App extends Component {
   }
 
   render() {
-    const styles = {
-      container: {
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }
-    };
-
     return (
       <BrowserRouter>
         <Layout>
           <Sidebar />
           <ContentLayout>
             <Suspense fallback={(
-              <div style={styles.container}>
+              <div className='spin-container'>
                 <Spin size='large' />
               </div>
             )}>

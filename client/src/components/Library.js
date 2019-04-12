@@ -11,18 +11,10 @@ class Library extends Component {
   }
 
   renderSavedTracks() {
-    const styles = {
-      container: {
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }
-    };
     const { isFetching, data } = this.props.savedTracks;
     if (isFetching) {
       return (
-        <div style={styles.container}>
+        <div className='spin-container'>
           <Spin size='large' />
         </div>
       );

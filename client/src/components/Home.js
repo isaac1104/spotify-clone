@@ -6,18 +6,10 @@ const { Title } = Typography;
 
 class Home extends Component {
   renderUserInfo() {
-    const styles = {
-      container: {
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }
-    };
     const { data: { displayName }, isFetching } = this.props.currentUser;
     if (isFetching) {
       return (
-        <div style={styles.container}>
+        <div className='spin-container'>
           <Spin size='large' />
         </div>
       );
