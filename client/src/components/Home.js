@@ -11,15 +11,14 @@ class Home extends Component {
   }
 
   renderUserInfo() {
-    const { data: { displayName, photo }, isFetching } = this.props.currentUser;
+    const { data: { displayName }, isFetching } = this.props.currentUser;
     if (isFetching) {
       return <Spin size='large' />;
     }
 
     return (
       <div>
-        <Title>Welcome, {displayName}</Title>
-        <img src={photo} alt={displayName} />
+        <Title>Made for {displayName.split(' ')[0]}</Title>
       </div>
     );
   }
