@@ -7,7 +7,7 @@ class TrackRow extends Component {
   state = {
     playing: false
   };
-  
+
   convertMsToMinSec(ms) {
     const minutes = Math.floor(ms / 60000);
     const seconds = ((ms % 60000) / 1000).toFixed(0);
@@ -35,12 +35,13 @@ class TrackRow extends Component {
       }
     };
     const { album, artists, name, explicit, duration_ms, preview_url } = this.props.data;
+    const { playing } = this.state;
 
     return (
       <div style={styles.container} className='track-row'>
         <div style={styles.infoContainer}>
           <Icon
-            type='play-circle'
+            type={playing ? 'pause' : 'play-circle'}
             onClick={() => this.togglePlaySound(preview_url)}
           />
           <div>

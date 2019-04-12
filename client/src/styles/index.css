@@ -29,7 +29,7 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
   opacity: 0.3;
 }
 
-.anticon-play-circle {
+.anticon-play-circle, .anticon-pause {
   font-size: 1.5em;
   margin-right: 1em;
   color: #ffffff;
