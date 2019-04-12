@@ -21,9 +21,14 @@ class Library extends Component {
       );
     }
     if (data.items) {
-      return data.items.map(item => (
-        <TrackRow key={item.track.id} data={item.track} />
-      ));
+      return (
+        <>
+          <Title level={3} style={{ textAlign: 'center' }}>Favorite Songs</Title>
+          {data.items.map(item => (
+            <TrackRow key={item.track.id} data={item.track} />
+          ))}
+        </>
+      );
     }
 
     return null;
@@ -33,19 +38,13 @@ class Library extends Component {
     const styles = {
       tracksContainer: {
         padding: 36
-      },
-      text: {
-        textAlign: 'center'
       }
     };
 
     return (
-      <>
-        <Title level={3} style={styles.text}>Favorite Songs</Title>
-        <div style={styles.tracksContainer}>
-          {this.renderSavedTracks()}
-        </div>
-      </>
+      <div style={styles.tracksContainer}>
+        {this.renderSavedTracks()}
+      </div>
     );
   }
 }
