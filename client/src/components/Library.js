@@ -1,13 +1,53 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Spin, Typography } from 'antd';
+import { fetchSavedTracksData } from '../actions';
 
-class Libary extends Component {
-  render() {
+const { Title } = Typography;
+
+class Library extends Component {
+  componentDidMount() {
+    this.props.fetchSavedTracksData();
+  }
+
+  renderSavedTracks() {
+    const styles = {
+      container: {
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }
+    };
+    const { isFetching, data } = this.props.savedTracks;
+    if (isFetching) {
+      return (
+        <div style={styles.container}>
+          <Spin size='large' />
+        </div>
+      );
+    }
     return (
       <div>
-        <h1>Your Library</h1>
+        <Title level={3}>Your Library</Title>
       </div>
+    )
+  }
+
+  render() {
+    console.log(this.props.savedTracks);
+    return (
+      <>
+        {this.renderSavedTracks()}
+      </>
     );
   }
 }
 
-export default Libary;
+const mapStateToProps = ({ savedTracks }) => {
+  return {
+    savedTracks
+  };
+};
+
+export default connect(mapStateToProps, { fetchSavedTracksData })(Library);
