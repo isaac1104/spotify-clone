@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Spin, Typography } from 'antd';
 import { fetchSavedTracksData } from '../actions';
+import TrackRow from './TrackRow';
 
 const { Title } = Typography;
 
@@ -19,18 +20,31 @@ class Library extends Component {
         </div>
       );
     }
-    return (
-      <div>
-        <Title level={3}>Your Library</Title>
-      </div>
-    )
+    if (data.items) {
+      return data.items.map(item => (
+        <TrackRow key={item.track.id} data={item.track} />
+      ));
+    }
+
+    return null;
   }
 
   render() {
-    console.log(this.props.savedTracks);
+    const styles = {
+      tracksContainer: {
+        padding: 36
+      },
+      text: {
+        textAlign: 'center'
+      }
+    };
+
     return (
       <>
-        {this.renderSavedTracks()}
+        <Title level={3} style={styles.text}>Favorite Songs</Title>
+        <div style={styles.tracksContainer}>
+          {this.renderSavedTracks()}
+        </div>
       </>
     );
   }

@@ -24,3 +24,13 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
   justify-content: center;
   align-items: center;
 }
+
+.track-row:hover {
+  opacity: 0.3;
+}
+
+.anticon-play-circle {
+  font-size: 1.5em;
+  margin-right: 1em;
+  color: #ffffff;
+}
