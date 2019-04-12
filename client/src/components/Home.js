@@ -11,9 +11,21 @@ class Home extends Component {
   }
 
   renderUserInfo() {
+    const styles = {
+      container: {
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }
+    };
     const { data: { displayName }, isFetching } = this.props.currentUser;
     if (isFetching) {
-      return <Spin size='large' />;
+      return (
+        <div style={styles.container}>
+          <Spin size='large' />
+        </div>
+      );
     }
 
     return (
