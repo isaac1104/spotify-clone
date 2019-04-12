@@ -27,6 +27,7 @@ passport.use(
       if (existingUser) {
         if (existingUser.accessToken !== accessToken) {
           await User.updateOne({ accessToken });
+          return done(null, existingUser);
         }
         return done(null, existingUser);
       }
