@@ -11,7 +11,7 @@ class ContentLayout extends Component {
         overflow: 'hidden'
       },
       content: {
-        backgroundColor: '#202225',
+        backgroundColor: '#1e202c',
         margin: 0,
         width: '100%',
         height: '100%',
