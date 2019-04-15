@@ -41,8 +41,7 @@ class App extends Component {
                     }
                   }}
                 />
-                <Route exact path='/home' component={requireAuth(Home)} />
-                <Route exact path='/library' component={requireAuth(Library)} />
+                <Route exact path='/home' component={requireAuth(Library)} />
               </Switch>
             </Suspense>
           </ContentLayout>
