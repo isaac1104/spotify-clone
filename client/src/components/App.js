@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Layout, Spin } from 'antd';
 import { fetchCurrentUserData } from '../actions';
 import Sidebar from './Sidebar';
+import SoundPlayer from './SoundPlayer';
 import requireAuth from '../utils/requireAuth';
 import ContentLayout from '../utils/ContentLayout';
 
@@ -45,6 +46,7 @@ class App extends Component {
               </Switch>
             </Suspense>
           </ContentLayout>
+          <SoundPlayer />
         </Layout>
       </BrowserRouter>
     );
