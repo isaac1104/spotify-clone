@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Layout, Menu, Icon } from 'antd';
+import logo from '../assets/logo.png';
 const { Sider } = Layout;
 
 class Sidebar extends Component {
@@ -21,23 +22,21 @@ class Sidebar extends Component {
   renderSidebar() {
     const { currentUser: { data }, savedTracks: { isFetching } } = this.props;
     const styles = {
-      logout: {
-        position: 'absolute',
-        bottom: 0
-      },
       sidebar: {
-        backgroundColor: '#0f0f0f'
+        backgroundColor: '#0f0f0f',
+        padding: '1.5em'
       },
       menu: {
         backgroundColor: '#0f0f0f'
+      },
+      logo: {
+        width: '10em',
+        marginBottom: '2em'
       }
     };
 
     const menuItems = [
-      { path: 'home', icon: 'home', text: 'Home' },
-      // { path: 'search', icon: 'search', text: 'Search' },
-      // { path: 'library', icon: 'database', text: 'Your Library' },
-      // { path: 'api/signout', icon: 'logout', text: 'Logout' }
+      { path: 'home', icon: 'home', text: 'Home' }
     ];
 
     if (isFetching) {
@@ -47,28 +46,16 @@ class Sidebar extends Component {
     if (data) {
       return (
         <Sider breakpoint='xl' collapsedWidth='0' style={styles.sidebar} width={230}>
+          <img src={logo} alt='logo' style={styles.logo} />
           <Menu mode='inline' theme='dark' defaultSelectedKeys={this.highlightMenu()} style={styles.menu}>
-            {menuItems.map(({ path, icon, text }, i) => {
-              if (path === 'api/signout') {
-                return (
-                  <Menu.Item key={i} style={styles.logout}>
-                    <a href={`/${path}`}>
-                      <Icon type={icon} />
-                      <span className='nav-text'>{text}</span>
-                    </a>
-                  </Menu.Item>
-                );
-              }
-
-              return (
-                <Menu.Item key={i}>
-                  <Link to={`/${path}`}>
-                    <Icon type={icon} />
-                    <span className='nav-text'>{text}</span>
-                  </Link>
-                </Menu.Item>
-              );
-            })}
+            {menuItems.map(({ path, icon, text }, i) => (
+              <Menu.Item key={i}>
+                <Link to={`/${path}`}>
+                  <Icon type={icon} />
+                  <span className='nav-text'>{text}</span>
+                </Link>
+              </Menu.Item>
+            ))}
           </Menu>
         </Sider>
       );
