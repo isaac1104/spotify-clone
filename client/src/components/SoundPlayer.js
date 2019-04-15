@@ -13,8 +13,11 @@ class SoundPlayer extends Component {
         position: 'fixed',
         bottom: 0,
         width: '100%',
+        height: '5.5em',
         backgroundColor: '#2f3136',
-        color: '#ffffff'
+        color: '#ffffff',
+        display: 'flex',
+        alignItems: 'center'
       }
     };
 

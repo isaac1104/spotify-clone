@@ -53,7 +53,7 @@ class Library extends Component {
     const styles = {
       tracksContainer: {
         padding: '12px 48px 36px 48px',
-        marginBottom: 80
+        marginBottom: 50
       }
     };
 
