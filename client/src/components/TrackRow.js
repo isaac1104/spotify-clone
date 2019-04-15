@@ -24,6 +24,9 @@ class TrackRow extends Component {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+      },
+      images: {
+        marginRight: '1em'
       }
     };
     const { album, artists, name, explicit, duration_ms, preview_url } = this.props.data;
@@ -35,6 +38,11 @@ class TrackRow extends Component {
         onClick={() => this.props.fetchCurrentSongData({ album, artists, name, preview_url })}
       >
         <div style={styles.infoContainer}>
+          <img
+            src={album.images[2].url}
+            style={styles.images}
+            alt={album.name}
+          />
           <div>
             <Title level={4}>{name}</Title>
             <Typography>
