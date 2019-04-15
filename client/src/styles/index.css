@@ -15,7 +15,8 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 }
 
 .ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
-  background-color: #00aca4 !important;
+  border-left: #00aca4 solid 0.15em !important;
+  background-color: transparent !important;
 }
 
 .spin-container {

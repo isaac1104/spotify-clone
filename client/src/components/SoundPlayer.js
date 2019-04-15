@@ -17,7 +17,8 @@ class SoundPlayer extends Component {
         backgroundColor: '#2f3136',
         color: '#ffffff',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: '1em 1.5em'
       }
     };
 
