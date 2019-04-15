@@ -37,7 +37,6 @@ class SoundPlayer extends Component {
   }
 
   render() {
-    console.log(this.props.savedTracks);
     return (
       <>
         {this.renderSoundPlayer()}

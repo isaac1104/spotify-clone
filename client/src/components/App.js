@@ -9,7 +9,6 @@ import requireAuth from '../utils/requireAuth';
 import ContentLayout from '../utils/ContentLayout';
 
 const Landing = lazy(() => import('./Landing'));
-const Home = lazy(() => import('./Home'));
 const Library = lazy(() => import('./Library'));
 
 class App extends Component {
