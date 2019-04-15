@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button, Typography } from 'antd';
-
-const { Title } = Typography;
+import { Button } from 'antd';
+import logo from '../assets/logo.png';
 
 const styles = {
   container: {
@@ -12,19 +11,25 @@ const styles = {
     backgroundColor: '#0f0f0f',
     textAlign: 'center'
   },
-  text: {
-    color: '#00aca4'
-  },
-  strike: {
-    color: 'tomato'
+  logo: {
+    width: '25em',
+    marginBottom: '2em'
   }
 };
 
 const Landing = () => (
   <div style={styles.container}>
     <div>
-      <Title level={2} style={styles.text}>Welcome to Spotify <strike style={styles.strike}>Clone</strike></Title>
-      <Button href='/auth/spotify'>Sign in with Spotify</Button>
+      <div>
+        <img src={logo} alt='logo' style={styles.logo} />
+      </div>
+      <Button
+        icon='login'
+        href='/auth/spotify'
+        size='large'
+      >
+        Sign in
+      </Button>
     </div>
   </div>
 );
