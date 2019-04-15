@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Icon, Tag, Typography } from 'antd';
+import { Tag, Typography } from 'antd';
 import { fetchCurrentSongData } from '../actions';
 
 const { Title } = Typography;
@@ -29,12 +29,12 @@ class TrackRow extends Component {
     const { album, artists, name, explicit, duration_ms, preview_url } = this.props.data;
 
     return (
-      <div style={styles.container} className='track-row'>
+      <div
+        style={styles.container}
+        className='track-row'
+        onClick={() => this.props.fetchCurrentSongData({ album, artists, name, preview_url })}
+      >
         <div style={styles.infoContainer}>
-          <Icon
-            type='play-circle'
-            onClick={() => this.props.fetchCurrentSongData({ album, artists, name, preview_url })}
-          />
           <div>
             <Title level={4}>{name}</Title>
             <Typography>
