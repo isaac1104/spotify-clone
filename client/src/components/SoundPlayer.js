@@ -7,7 +7,7 @@ const { Footer } = Layout;
 
 class SoundPlayer extends Component {
   renderSoundPlayer() {
-    const { data } = this.props.currentUser;
+    const { currentUser, currentSong: { data } } = this.props;
     const styles = {
       container: {
         position: 'fixed',
@@ -16,12 +16,12 @@ class SoundPlayer extends Component {
       }
     };
 
-    if (data) {
+    if (currentUser.data) {
       return (
         <Footer style={styles.container}>
           <AudioPlayer
-            src="https://p.scdn.co/mp3-preview/29e19c68dd853994221a90103db28427f1185e33?cid=01c386a32bdf45e3b6054fc7e0ef05cf"
-            onPlay={e => console.log("onPlay")}
+            autoPlay={data.preview_url ? true : false}
+            src={data.preview_url}
           />
         </Footer>
       );
@@ -39,9 +39,10 @@ class SoundPlayer extends Component {
   }
 }
 
-const mapStateToProps = ({ currentUser }) => {
+const mapStateToProps = ({ currentUser, currentSong }) => {
   return {
-    currentUser
+    currentUser,
+    currentSong
   };
 };
 

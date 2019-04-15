@@ -37,7 +37,7 @@ class Sidebar extends Component {
       { path: 'home', icon: 'home', text: 'Home' },
       { path: 'search', icon: 'search', text: 'Search' },
       { path: 'library', icon: 'database', text: 'Your Library' },
-      { path: 'api/signout', icon: 'logout', text: 'Logout' }
+      { path: 'api/signout', icon: 'logout', text: 'Logout' } 
     ];
 
     if (data) {

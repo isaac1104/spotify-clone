@@ -1,24 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Icon, Tag, Typography } from 'antd';
+import { fetchCurrentSongData } from '../actions';
 
 const { Title } = Typography;
 
 class TrackRow extends Component {
-  state = {
-    playing: false
-  };
-
   convertMsToMinSec(ms) {
     const minutes = Math.floor(ms / 60000);
     const seconds = ((ms % 60000) / 1000).toFixed(0);
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
-
-  togglePlaySound(src) {
-    this.setState({ playing: !this.state.playing }, () => {
-      this.state.playing ? new Audio(src).play() : new Audio(src).pause();
-    });
-  }
 
   render() {
     const styles = {
@@ -35,14 +27,13 @@ class TrackRow extends Component {
       }
     };
     const { album, artists, name, explicit, duration_ms, preview_url } = this.props.data;
-    const { playing } = this.state;
 
     return (
       <div style={styles.container} className='track-row'>
         <div style={styles.infoContainer}>
           <Icon
-            type={playing ? 'pause' : 'play-circle'}
-            onClick={() => this.togglePlaySound(preview_url)}
+            type='play-circle'
+            onClick={() => this.props.fetchCurrentSongData({ album, artists, name, preview_url })}
           />
           <div>
             <Title level={4}>{name}</Title>
@@ -66,4 +57,4 @@ class TrackRow extends Component {
   }
 }
 
-export default TrackRow;
+export default connect(null, { fetchCurrentSongData })(TrackRow);

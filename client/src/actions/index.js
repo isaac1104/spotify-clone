@@ -22,3 +22,7 @@ export const fetchSavedTracksData = () => async dispatch => {
     dispatch({ type: types.FETCH_SAVED_TRACKS_FAIL, payload: e });
   }
 };
+
+export const fetchCurrentSongData = data => async dispatch => {
+  dispatch({ type: types.FETCH_CURRENT_SONG_DATA, payload: data });
+};
