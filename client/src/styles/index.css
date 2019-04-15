@@ -56,3 +56,7 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 .volumn {
   border-bottom: 15px solid #00aca4 !important;
 }
+
+.ant-avatar-circle {
+  cursor: grab;
+}
