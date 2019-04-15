@@ -19,7 +19,7 @@ class Sidebar extends Component {
   };
 
   renderSidebar() {
-    const { data } = this.props.currentUser;
+    const { currentUser: { data }, savedTracks: { isFetching } } = this.props;
     const styles = {
       logout: {
         position: 'absolute',
@@ -39,6 +39,10 @@ class Sidebar extends Component {
       // { path: 'library', icon: 'database', text: 'Your Library' },
       // { path: 'api/signout', icon: 'logout', text: 'Logout' }
     ];
+
+    if (isFetching) {
+      return null;
+    }
 
     if (data) {
       return (
@@ -78,8 +82,11 @@ class Sidebar extends Component {
   }
 };
 
-function mapStateToProps({ currentUser }) {
-  return { currentUser };
+function mapStateToProps({ currentUser, savedTracks }) {
+  return {
+    currentUser,
+    savedTracks
+  };
 };
 
 export default connect(mapStateToProps, null)(Sidebar);

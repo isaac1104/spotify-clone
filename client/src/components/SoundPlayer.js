@@ -7,7 +7,7 @@ const { Footer } = Layout;
 
 class SoundPlayer extends Component {
   renderSoundPlayer() {
-    const { currentUser, currentSong: { data } } = this.props;
+    const { currentUser, currentSong: { data }, savedTracks: { isFetching } } = this.props;
     const styles = {
       container: {
         position: 'fixed',
@@ -17,6 +17,10 @@ class SoundPlayer extends Component {
         color: '#ffffff'
       }
     };
+
+    if (isFetching) {
+      return null;
+    }
 
     if (currentUser.data) {
       return (
@@ -33,6 +37,7 @@ class SoundPlayer extends Component {
   }
 
   render() {
+    console.log(this.props.savedTracks);
     return (
       <>
         {this.renderSoundPlayer()}
@@ -41,10 +46,11 @@ class SoundPlayer extends Component {
   }
 }
 
-const mapStateToProps = ({ currentUser, currentSong }) => {
+const mapStateToProps = ({ currentUser, currentSong, savedTracks }) => {
   return {
     currentUser,
-    currentSong
+    currentSong,
+    savedTracks
   };
 };
 
