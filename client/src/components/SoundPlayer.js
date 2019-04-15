@@ -12,7 +12,9 @@ class SoundPlayer extends Component {
       container: {
         position: 'fixed',
         bottom: 0,
-        width: '100%'
+        width: '100%',
+        backgroundColor: '#0f0f0f',
+        color: '#ffffff'
       }
     };
 
