@@ -38,7 +38,7 @@ class Library extends Component {
               {displayName}
             </Typography>
           </Popover>
-          <Title level={3} style={{ textAlign: 'center' }}>Favorite Songs</Title>
+          <Title level={3} style={{ textAlign: 'center', clear: 'both' }}>Favorite Songs</Title>
           {data.items.map(item => (
             <TrackRow key={item.track.id} data={item.track} />
           ))}
