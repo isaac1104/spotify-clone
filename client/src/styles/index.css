@@ -36,6 +36,10 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
   color: #ffffff;
 }
 
+.react-h5-audio-player {
+  width: 100%;
+}
+
 .react-h5-audio-player .flex {
   background-color: #0f0f0f !important;
 }

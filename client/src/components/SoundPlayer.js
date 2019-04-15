@@ -7,14 +7,16 @@ const { Footer } = Layout;
 
 class SoundPlayer extends Component {
   renderSoundPlayer() {
-    const { currentUser, currentSong: { data }, savedTracks: { isFetching } } = this.props;
+    const { currentUser: { data }, currentSong: { data: { preview_url, album } }, savedTracks: { isFetching } } = this.props;
     const styles = {
       container: {
         position: 'fixed',
         bottom: 0,
         width: '100%',
         backgroundColor: '#0f0f0f',
-        color: '#ffffff'
+        color: '#ffffff',
+        display: 'flex',
+        justifyContent: 'start'
       }
     };
 
@@ -22,12 +24,16 @@ class SoundPlayer extends Component {
       return null;
     }
 
-    if (currentUser.data) {
+    if (data && album) {
       return (
         <Footer style={styles.container}>
+          <img
+            src={album.images[2].url}
+            alt={album.name}
+          />
           <AudioPlayer
-            autoPlay={data.preview_url ? true : false}
-            src={data.preview_url}
+            autoPlay={preview_url ? true : false}
+            src={preview_url}
           />
         </Footer>
       );

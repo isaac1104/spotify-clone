@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Avatar, Button, Spin, Typography, Popover } from 'antd';
+import { Avatar, Spin, Typography, Popover } from 'antd';
 import { fetchSavedTracksData } from '../actions';
 import TrackRow from './TrackRow';
 
