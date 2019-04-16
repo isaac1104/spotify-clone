@@ -41,6 +41,7 @@ class SoundPlayer extends Component {
             <AudioPlayer
               autoPlay={preview_url ? true : false}
               src={preview_url}
+              progressUpdateInterval={50}
             />
           </Col>
         </Footer>
