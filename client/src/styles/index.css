@@ -60,3 +60,15 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 .ant-avatar-circle {
   cursor: grab;
 }
+
+.ant-list-item-meta-title {
+  color: #ffffff;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.ant-list-split .ant-list-item {
+  border-bottom: #00aca4 solid 0.15em;
+}

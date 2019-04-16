@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Avatar, Spin, Typography, Popover } from 'antd';
+import { Avatar, Spin, Typography, Popover, List } from 'antd';
 import { fetchSavedTracksData } from '../actions';
 import TrackRow from './TrackRow';
 
@@ -39,9 +39,11 @@ class Library extends Component {
             </Typography>
           </Popover>
           <Title level={3} style={{ textAlign: 'center', clear: 'both' }}>Favorite Songs</Title>
-          {data.items.map(item => (
-            <TrackRow key={item.track.id} data={item.track} />
-          ))}
+          <List
+            itemLayout='horizontal'
+            dataSource={data.items}
+            renderItem={item => <TrackRow key={item.track.id} data={item.track} />}
+          />
         </>
       );
     }

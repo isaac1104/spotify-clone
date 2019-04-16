@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Tag, Typography } from 'antd';
+import { Tag, Typography, List, Avatar } from 'antd';
 import { fetchCurrentSongData } from '../actions';
 
-const { Title } = Typography;
+const { Item } = List;
 
 class TrackRow extends Component {
   convertMsToMinSec(ms) {
@@ -32,19 +32,15 @@ class TrackRow extends Component {
     const { album, artists, name, explicit, duration_ms, preview_url } = this.props.data;
 
     return (
-      <div
+      <Item
         style={styles.container}
         className='track-row'
         onClick={() => this.props.fetchCurrentSongData({ album, artists, name, preview_url })}
       >
-        <div style={styles.infoContainer}>
-          <img
-            src={album.images[2].url}
-            style={styles.images}
-            alt={album.name}
-          />
-          <div>
-            <Title level={4}>{name}</Title>
+        <Item.Meta
+          avatar={<Avatar shape='square' size={64} src={album.images[2].url} />}
+          title={name}
+          description={
             <Typography>
               {explicit ? <Tag>Explicit</Tag> : null}
               {artists.map(artist => {
@@ -55,12 +51,12 @@ class TrackRow extends Component {
                 }
               })} - {album.name}
             </Typography>
-          </div>
-        </div>
+          }
+        />
         <div>
           <Typography>{this.convertMsToMinSec(duration_ms)}</Typography>
         </div>
-      </div>
+      </Item>
     );
   }
 }
