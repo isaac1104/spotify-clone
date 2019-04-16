@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AudioPlayer from 'react-h5-audio-player';
-import { Col, Layout } from 'antd';
+import { Avatar, Col, Layout } from 'antd';
 
 const { Footer } = Layout;
 
@@ -31,9 +31,9 @@ class SoundPlayer extends Component {
         <Footer style={styles.container}>
           <Col xs={0} sm={2} md={2} lg={2} xl={1}>
             {album ? (
-              <img
+              <Avatar
+                size={64}
                 src={album.images[2].url}
-                alt={album.name}
               />
             ) : <div />}
           </Col>

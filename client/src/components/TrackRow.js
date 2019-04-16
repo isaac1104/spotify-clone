@@ -38,7 +38,7 @@ class TrackRow extends Component {
         onClick={() => this.props.fetchCurrentSongData({ album, artists, name, preview_url })}
       >
         <Item.Meta
-          avatar={<Avatar shape='square' size={64} src={album.images[2].url} />}
+          avatar={<Avatar size={64} src={album.images[2].url} />}
           title={name}
           description={
             <Typography>
