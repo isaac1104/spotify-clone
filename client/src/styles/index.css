@@ -68,7 +68,3 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
   font-size: 20px;
   line-height: 1.4;
 }
-
-.ant-list-split .ant-list-item {
-  border-bottom: #00aca4 solid 0.15em;
-}

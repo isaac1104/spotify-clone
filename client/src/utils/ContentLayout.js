@@ -11,7 +11,8 @@ class ContentLayout extends Component {
         overflow: 'hidden'
       },
       content: {
-        backgroundColor: '#1e202c',
+        backgroundColor: '#0f0f0f',
+        backgroundImage: 'linear-gradient(315deg, #2d3436 0%, #0f0f0f 74%)',
         margin: 0,
         width: '100%',
         height: '100%',
