@@ -24,9 +24,11 @@ const Landing = () => (
         <img src={logo} alt='logo' style={styles.logo} />
       </div>
       <Button
-        icon='login'
-        href='/auth/spotify'
+        block
         size='large'
+        shape='round'
+        href='/auth/spotify'
+        className='login-btn'
       >
         Sign in
       </Button>

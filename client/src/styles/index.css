@@ -72,3 +72,14 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 .anticon-home {
   font-size: 1.5em !important;
 }
+
+.login-btn {
+  background-color: #00aca4;
+  border: 1px solid #00aca4 !important;
+}
+
+.login-btn:hover {
+  background-color: #00aca4;
+  border: 1px solid #00aca4 !important;
+  color: #ffffff;
+}
