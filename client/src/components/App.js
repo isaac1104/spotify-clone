@@ -1,7 +1,7 @@
 import React, { Component, Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Layout, Spin } from 'antd';
+import { Layout, Spin, Icon } from 'antd';
 import { fetchCurrentUserData } from '../actions';
 import Sidebar from './Sidebar';
 import SoundPlayer from './SoundPlayer';
@@ -24,7 +24,10 @@ class App extends Component {
           <ContentLayout>
             <Suspense fallback={(
               <div className='spin-container'>
-                <Spin size='large' />
+                <Spin
+                  indicator={<Icon type='loading' />}
+                  size='large'
+                />
               </div>
             )}>
               <Switch>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Avatar, Spin, Typography, Popover, List } from 'antd';
+import { Avatar, Spin, Typography, Popover, List, Icon } from 'antd';
 import { fetchSavedTracksData } from '../actions';
 import TrackRow from './TrackRow';
 
@@ -16,7 +16,10 @@ class Library extends Component {
     if (isFetching) {
       return (
         <div className='spin-container'>
-          <Spin size='large' />
+          <Spin
+            indicator={<Icon type='loading' />}
+            size='large'
+          />
         </div>
       );
     }
