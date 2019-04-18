@@ -12,7 +12,8 @@ class TrackRow extends Component {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
-  render() {
+  renderTracks() {
+    const { album, artists, name, explicit, duration_ms, preview_url } = this.props.data;
     const styles = {
       container: {
         display: 'flex',
@@ -29,7 +30,10 @@ class TrackRow extends Component {
         marginRight: '1em'
       }
     };
-    const { album, artists, name, explicit, duration_ms, preview_url } = this.props.data;
+
+    if (preview_url === null) {
+      return null;
+    }
 
     return (
       <Item
@@ -57,6 +61,14 @@ class TrackRow extends Component {
           <Typography>{this.convertMsToMinSec(duration_ms)}</Typography>
         </div>
       </Item>
+    );
+  }
+
+  render() {
+    return (
+      <>
+        {this.renderTracks()}
+      </>
     );
   }
 }
