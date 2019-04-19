@@ -12,7 +12,7 @@ class Library extends Component {
   }
 
   renderSavedTracks() {
-    const { savedTracks: { isFetching, data }, currentUser: { data: { displayName, photo } } } = this.props;
+    const { savedTracks: { isFetching, isFetchingMore, data }, currentUser: { data: { displayName, photo } } } = this.props;
     if (isFetching) {
       return (
         <div className='spin-container'>
@@ -46,7 +46,13 @@ class Library extends Component {
             itemLayout='horizontal'
             dataSource={data.items}
             renderItem={item => <TrackRow key={item.track.id} data={item.track} />}
-            loadMore={data.next ? <Button icon='more' onClick={() => this.props.fetchMoreTracks(data.next)} /> : null}
+            loadMore={data.next ? (
+              <Button
+                icon='more'
+                loading={isFetchingMore}
+                onClick={() => this.props.fetchMoreTracks(data.next)}
+              />
+            ): null}
           />
         </>
       );
