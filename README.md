@@ -4,7 +4,7 @@
 
 Spotify Clone lets you play preview of your songs from your own saved tracks list.
 
-![screenshot](<img src="https://user-images.githubusercontent.com/28583016/56420134-ba06a880-62d7-11e9-940d-4551373f5fe8.png">)
+![screenshot](https://user-images.githubusercontent.com/28583016/56420422-db1bc900-62d8-11e9-9725-66d5b5facf5f.png)
 
 ## To use the app
 
