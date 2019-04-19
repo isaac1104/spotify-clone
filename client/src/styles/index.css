@@ -76,28 +76,48 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 .login-btn {
   background-color: #00aca4;
   border: 1px solid #00aca4 !important;
+  color: #ffffff;
 }
 
 .login-btn:hover {
   background-color: #00aca4;
   border: 1px solid #00aca4 !important;
-  color: #ffffff;
+  opacity: 0.9;
 }
 
 .loadmore-btn {
   background-color: #00aca4;
   border: 1px solid #00aca4 !important;
   text-align: center;
+  color: #ffffff;
 }
 
 .loadmore-btn:hover {
   background-color: #00aca4;
   border: 1px solid #00aca4 !important;
-  color: #ffffff;
+  opacity: 0.9;
 }
 
 .loadmore-btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #ffffff;
+}
+
+.signout-btn {
+  background-color: #00aca4;
+  border: 1px solid #00aca4 !important;
+  text-align: center;
+  color: #ffffff;
+}
+
+.signout-btn:hover {
+  background-color: #00aca4;
+  border: 1px solid #00aca4 !important;
+  opacity: 0.9;
+}
+
+.ant-popover-inner {
+  background-color: transparent !important;
 }

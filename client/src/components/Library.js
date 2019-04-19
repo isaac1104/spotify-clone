@@ -28,7 +28,7 @@ class Library extends Component {
       return (
         <>
           <Popover
-            content={<a href='/api/signout'>Sign Out</a>}
+            content={<Button shape='round' href='/api/signout' className='signout-btn'>Sign Out</Button>}
             trigger='click'
             placement='left'
           >
