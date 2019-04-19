@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Avatar, Spin, Typography, Popover, List, Icon } from 'antd';
-import { fetchSavedTracksData } from '../actions';
+import { Avatar, Button, Spin, Typography, Popover, List, Icon } from 'antd';
+import { fetchSavedTracksData, fetchMoreTracks } from '../actions';
 import TrackRow from './TrackRow';
 
 const { Title } = Typography;
@@ -46,6 +46,7 @@ class Library extends Component {
             itemLayout='horizontal'
             dataSource={data.items}
             renderItem={item => <TrackRow key={item.track.id} data={item.track} />}
+            loadMore={data.next ? <Button icon='more' onClick={() => this.props.fetchMoreTracks(data.next)} /> : null}
           />
         </>
       );
@@ -77,4 +78,4 @@ const mapStateToProps = ({ currentUser, savedTracks }) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchSavedTracksData })(Library);
+export default connect(mapStateToProps, { fetchSavedTracksData, fetchMoreTracks })(Library);

@@ -23,6 +23,18 @@ export const fetchSavedTracksData = () => async dispatch => {
   }
 };
 
+export const fetchMoreTracks = url => async (dispatch, getState) => {
+  dispatch({ type: types.FETCH_MORE_TRACKS_REQUEST });
+  const { accessToken } = getState().currentUser.data;
+  try {
+    const request = await axios.get(url, { headers: { Authorization: `Bearer ${accessToken}` } });
+    const { data } = request;
+    dispatch({ type: types.FETCH_MORE_TRACKS_SUCCESS, payload: data });
+  } catch (e) {
+    dispatch({ type: types.FETCH_MORE_TRACKS_FAIL, payload: e });
+  }
+}
+
 export const fetchCurrentSongData = data => async dispatch => {
   dispatch({ type: types.FETCH_CURRENT_SONG_DATA, payload: data });
 };
