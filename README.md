@@ -1,13 +1,10 @@
-![react logo](https://cdn.iconscout.com/icon/free/png-256/react-2-458175.png) 
-
 # 🎵 Spotify Clone
 
 ## About This App
 
 Spotify Clone lets you play preview of your songs from your own saved tracks list.
 
-### Demo
-![demo](https://user-images.githubusercontent.com/28583016/48362890-81dca900-e659-11e8-8a9f-944fae0682a8.gif)
+![screenshot](<img src="https://user-images.githubusercontent.com/28583016/56420134-ba06a880-62d7-11e9-940d-4551373f5fe8.png">)
 
 ## To use the app
 
