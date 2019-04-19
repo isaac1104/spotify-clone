@@ -47,11 +47,17 @@ class Library extends Component {
             dataSource={data.items}
             renderItem={item => <TrackRow key={item.track.id} data={item.track} />}
             loadMore={data.next ? (
-              <Button
-                icon='more'
-                loading={isFetchingMore}
-                onClick={() => this.props.fetchMoreTracks(data.next)}
-              />
+              <div className='loadmore-btn-container'>
+                <Button
+                  size='small'
+                  shape='round'
+                  className='loadmore-btn'
+                  loading={isFetchingMore}
+                  onClick={() => this.props.fetchMoreTracks(data.next)}
+                >
+                  Load More Songs
+                </Button>
+              </div>
             ): null}
           />
         </>
