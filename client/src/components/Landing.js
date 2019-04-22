@@ -31,7 +31,7 @@ const Landing = () => (
         href='/auth/spotify'
         className='login-btn'
       >
-        Sign in
+        Sign In
       </Button>
     </div>
   </div>
