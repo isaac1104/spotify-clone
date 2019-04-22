@@ -5,6 +5,23 @@ import { fetchCurrentSongData } from '../actions';
 
 const { Item } = List;
 
+const styles = {
+  container: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: '1em'
+  },
+  infoContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  images: {
+    marginRight: '1em'
+  }
+};
+
 class TrackRow extends Component {
   convertMsToMinSec(ms) {
     const minutes = Math.floor(ms / 60000);
@@ -14,22 +31,6 @@ class TrackRow extends Component {
 
   renderTracks() {
     const { album, artists, name, explicit, duration_ms, preview_url } = this.props.data;
-    const styles = {
-      container: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: '1em'
-      },
-      infoContainer: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-      },
-      images: {
-        marginRight: '1em'
-      }
-    };
 
     if (preview_url === null) {
       return null;

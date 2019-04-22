@@ -5,22 +5,23 @@ import { Avatar, Col, Layout } from 'antd';
 
 const { Footer } = Layout;
 
+const styles = {
+  container: {
+    position: 'fixed',
+    bottom: 0,
+    width: '100%',
+    height: '6em',
+    backgroundColor: '#2f3136',
+    color: '#ffffff',
+    display: 'flex',
+    alignItems: 'center',
+    padding: '1em 1.5em'
+  }
+};
+
 class SoundPlayer extends Component {
   renderSoundPlayer() {
     const { currentUser: { data }, currentSong: { data: { preview_url, album } }, savedTracks: { isFetching } } = this.props;
-    const styles = {
-      container: {
-        position: 'fixed',
-        bottom: 0,
-        width: '100%',
-        height: '6em',
-        backgroundColor: '#2f3136',
-        color: '#ffffff',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '1em 1.5em'
-      }
-    };
 
     if (isFetching) {
       return null;
