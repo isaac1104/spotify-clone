@@ -6,6 +6,26 @@ import TrackRow from './TrackRow';
 
 const { Title } = Typography;
 
+const styles = {
+  tracksContainer: {
+    padding: '0px 48px 36px',
+    marginBottom: 50
+  },
+  signout: {
+    btn: {
+      float: 'right'
+    },
+    avatar: {
+      marginRight: '1em'
+    }
+  },
+  title: {
+    textAlign: 'center',
+    clear: 'both',
+    fontSize: '1.25em'
+  }
+};
+
 class Library extends Component {
   componentDidMount() {
     this.props.fetchSavedTracksData();
@@ -32,16 +52,16 @@ class Library extends Component {
             trigger='click'
             placement='left'
           >
-            <Typography style={{ float: 'right' }}>
+            <Typography style={styles.signout.btn}>
               <Avatar
                 src={photo}
                 alt={displayName}
-                style={{ marginRight: '1em'}}
+                style={styles.signout.avatar}
               />
               {displayName}
             </Typography>
           </Popover>
-          <Title level={3} style={{ textAlign: 'center', clear: 'both' }}>Favorite Songs</Title>
+          <Title level={4} style={styles.title}>FAVORITE SONGS</Title>
           <List
             itemLayout='horizontal'
             dataSource={data.items}
@@ -68,13 +88,6 @@ class Library extends Component {
   }
 
   render() {
-    const styles = {
-      tracksContainer: {
-        padding: '0px 48px 36px',
-        marginBottom: 50
-      }
-    };
-
     return (
       <div style={styles.tracksContainer}>
         {this.renderSavedTracks()}
