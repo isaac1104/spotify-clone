@@ -9,6 +9,7 @@ const styles = {
     alignItems: 'center',
     height: '100vh',
     backgroundColor: '#0f0f0f',
+    backgroundImage: 'linear-gradient(315deg, #2d3436 0%, #0f0f0f 74%)',
     textAlign: 'center'
   },
   logo: {
