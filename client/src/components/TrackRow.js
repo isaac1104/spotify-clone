@@ -45,8 +45,8 @@ class TrackRow extends Component {
           avatar={<Avatar size={64} src={album.images[2].url} />}
           title={name}
           description={
-            <Typography>
-              {explicit ? <Tag>Explicit</Tag> : null}
+            <Typography className='song-info'>
+              {explicit ? <Tag className='explicit-tag'>Explicit</Tag> : null}
               {artists.map(artist => {
                 if (artists.indexOf(artist) === artists.length - 1) {
                   return artist.name;
@@ -58,7 +58,7 @@ class TrackRow extends Component {
           }
         />
         <div>
-          <Typography>{this.convertMsToMinSec(duration_ms)}</Typography>
+          <Typography className='song-duration'>{this.convertMsToMinSec(duration_ms)}</Typography>
         </div>
       </Item>
     );

@@ -121,3 +121,48 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 .ant-popover-inner {
   background-color: transparent !important;
 }
+
+@media screen and (max-width: 834px) {
+  .song-info {
+    font-size: 12px;
+  }
+  .song-duration {
+    font-size: 12px;
+  }
+  .ant-list-item-meta-title {
+    font-size: 16px;
+  }
+  .explicit-tag {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .song-info {
+    font-size: 10px;
+  }
+  .song-duration {
+    font-size: 8px;
+  }
+  .ant-list-item-meta-title {
+    font-size: 14px;
+  }
+  .explicit-tag {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .song-info {
+    display: none;
+  }
+  .song-duration {
+    display: none;
+  }
+  .ant-list-item-meta-title {
+    font-size: 12px;
+  }
+  .explicit-tag {
+    display: none;
+  }
+}
