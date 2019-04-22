@@ -5,7 +5,6 @@ import { fetchSavedTracksData, fetchMoreTracks } from '../actions';
 import TrackRow from './TrackRow';
 
 const { Title } = Typography;
-
 const styles = {
   tracksContainer: {
     padding: '0px 48px 36px',

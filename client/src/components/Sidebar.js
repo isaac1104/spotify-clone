@@ -3,7 +3,22 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Layout, Menu, Icon } from 'antd';
 import logo from '../assets/logo.png';
+
 const { Sider } = Layout;
+const menuItems = [{ path: 'home', icon: 'home', text: 'Home' }];
+const styles = {
+  sidebar: {
+    backgroundColor: '#0f0f0f',
+    padding: '1.5em'
+  },
+  menu: {
+    backgroundColor: '#0f0f0f'
+  },
+  logo: {
+    width: '10em',
+    marginBottom: '2em'
+  }
+};
 
 class Sidebar extends Component {
   highlightMenu() {
@@ -21,23 +36,6 @@ class Sidebar extends Component {
 
   renderSidebar() {
     const { currentUser: { data }, savedTracks: { isFetching } } = this.props;
-    const styles = {
-      sidebar: {
-        backgroundColor: '#0f0f0f',
-        padding: '1.5em'
-      },
-      menu: {
-        backgroundColor: '#0f0f0f'
-      },
-      logo: {
-        width: '10em',
-        marginBottom: '2em'
-      }
-    };
-
-    const menuItems = [
-      { path: 'home', icon: 'home', text: 'Home' }
-    ];
 
     if (isFetching) {
       return null;

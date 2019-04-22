@@ -4,7 +4,6 @@ import { Tag, Typography, List, Avatar } from 'antd';
 import { fetchCurrentSongData } from '../actions';
 
 const { Item } = List;
-
 const styles = {
   container: {
     display: 'flex',

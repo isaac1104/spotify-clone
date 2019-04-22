@@ -4,7 +4,6 @@ import AudioPlayer from 'react-h5-audio-player';
 import { Avatar, Col, Layout } from 'antd';
 
 const { Footer } = Layout;
-
 const styles = {
   container: {
     position: 'fixed',
