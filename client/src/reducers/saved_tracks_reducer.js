@@ -8,7 +8,7 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-  data: [],
+  data: {},
   isFetching: false,
   isFetchingMore: false,
   errorMsg: null
@@ -31,14 +31,14 @@ const savedTracksReducer = (state = INITIAL_STATE, { type, payload }) => {
     case FETCH_SAVED_TRACKS_FAIL:
       return {
         ...state,
-        data: [],
+        data: {},
         isFetching: false,
         errorMsg: payload
       };
     case FETCH_MORE_TRACKS_REQUEST:
       return {
         ...state,
-        isFetchingMore: true
+        isFetchingMore: payload
       };
     case FETCH_MORE_TRACKS_SUCCESS:
     const { next, previous, href, items } = payload;

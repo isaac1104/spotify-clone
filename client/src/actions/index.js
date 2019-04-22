@@ -24,7 +24,7 @@ export const fetchSavedTracksData = () => async dispatch => {
 };
 
 export const fetchMoreTracks = url => async (dispatch, getState) => {
-  dispatch({ type: types.FETCH_MORE_TRACKS_REQUEST });
+  dispatch({ type: types.FETCH_MORE_TRACKS_REQUEST, payload: true });
   const { accessToken } = getState().currentUser.data;
   try {
     const request = await axios.get(url, { headers: { Authorization: `Bearer ${accessToken}` } });
