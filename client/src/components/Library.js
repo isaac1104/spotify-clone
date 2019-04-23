@@ -30,6 +30,41 @@ class Library extends Component {
     this.props.fetchSavedTracksData();
   }
 
+  renderAvatar(photo, displayName) {
+    return (
+      <Popover
+        content={<Button shape='round' href='/api/signout' className='signout-btn'>Sign Out</Button>}
+        trigger='click'
+        placement='left'
+      >
+        <Typography style={styles.signout.btn}>
+          <Avatar
+            src={photo}
+            alt={displayName}
+            style={styles.signout.avatar}
+          />
+          {displayName}
+        </Typography>
+      </Popover>
+    );
+  };
+
+  renderLoadMoreBtn(isFetchingMore, next) {
+    return (
+      <div className='loadmore-btn-container'>
+        <Button
+          size='small'
+          shape='round'
+          className='loadmore-btn'
+          loading={isFetchingMore}
+          onClick={() => this.props.fetchMoreTracks(next)}
+        >
+          {isFetchingMore ? 'Loading...' : 'Load More'}
+        </Button>
+      </div>
+    );
+  };
+
   renderSavedTracks() {
     const { savedTracks: { isFetching, isFetchingMore, data }, currentUser: { data: { displayName, photo } } } = this.props;
     if (isFetching) {
@@ -46,42 +81,17 @@ class Library extends Component {
     if (data.items) {
       return (
         <>
-          <Popover
-            content={<Button shape='round' href='/api/signout' className='signout-btn'>Sign Out</Button>}
-            trigger='click'
-            placement='left'
-          >
-            <Typography style={styles.signout.btn}>
-              <Avatar
-                src={photo}
-                alt={displayName}
-                style={styles.signout.avatar}
-              />
-              {displayName}
-            </Typography>
-          </Popover>
+          {this.renderAvatar(photo, displayName)}
           <Title level={4} style={styles.title}>FAVORITE SONGS</Title>
           <List
             itemLayout='horizontal'
             dataSource={data.items}
             renderItem={item => <TrackRow key={item.track.id} data={item.track} />}
-            loadMore={data.next ? (
-              <div className='loadmore-btn-container'>
-                <Button
-                  size='small'
-                  shape='round'
-                  className='loadmore-btn'
-                  loading={isFetchingMore}
-                  onClick={() => this.props.fetchMoreTracks(data.next)}
-                >
-                  Load More Songs
-                </Button>
-              </div>
-            ): null}
+            loadMore={data.next ? this.renderLoadMoreBtn(isFetchingMore, data.next): null}
           />
         </>
       );
-    }
+    };
 
     return null;
   }
