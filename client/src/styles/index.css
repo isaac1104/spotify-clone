@@ -170,3 +170,24 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
     display: none;
   }
 }
+
+@media screen and (max-width: 650px) {
+  .album-cover {
+    width: 70px !important;
+    height: 70px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .album-cover {
+    width: 60px !important;
+    height: 60px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .album-cover {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
