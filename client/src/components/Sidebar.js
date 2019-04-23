@@ -25,13 +25,20 @@ class Sidebar extends Component {
     const { pathname } = window.location;
     if (pathname.includes('/home')) {
       return ['0'];
-    } else if (pathname.includes('/search')) {
-      return ['1'];
-    } else if (pathname.includes('/library')) {
-      return ['2'];
     } else {
       return ['0'];
     }
+  };
+
+  renderSidebarMenu(menuItems) {
+    return menuItems.map(({ path, icon, text }, i) => (
+      <Menu.Item key={i}>
+        <Link to={`/${path}`}>
+          <Icon type={icon} />
+          <span className='nav-text'>{text}</span>
+        </Link>
+      </Menu.Item>
+    ));
   };
 
   renderSidebar() {
@@ -46,14 +53,7 @@ class Sidebar extends Component {
         <Sider breakpoint='xl' collapsedWidth='0' style={styles.sidebar} width={230}>
           <img src={logo} alt='logo' style={styles.logo} />
           <Menu mode='inline' theme='dark' defaultSelectedKeys={this.highlightMenu()} style={styles.menu}>
-            {menuItems.map(({ path, icon, text }, i) => (
-              <Menu.Item key={i}>
-                <Link to={`/${path}`}>
-                  <Icon type={icon} />
-                  <span className='nav-text'>{text}</span>
-                </Link>
-              </Menu.Item>
-            ))}
+            {this.renderSidebarMenu(menuItems)}
           </Menu>
         </Sider>
       );

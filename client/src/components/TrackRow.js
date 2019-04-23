@@ -30,11 +30,11 @@ class TrackRow extends Component {
 
   renderArtistsName(artists) {
     return artists.map(artist => artists.indexOf(artist) === artists.length - 1 ? artist.name : `${artist.name}, `);
-  }
+  };
 
   renderExplicitTag(explicit) {
     return explicit ? <Tag className='explicit-tag'>Explicit</Tag> : null;
-  }
+  };
 
   renderSongDuration(duration) {
     return (
@@ -44,7 +44,7 @@ class TrackRow extends Component {
         </Typography>
       </div>
     );
-  }
+  };
 
   renderTracks() {
     const { album, artists, name, explicit, duration_ms, preview_url } = this.props.data;
@@ -72,7 +72,7 @@ class TrackRow extends Component {
         {this.renderSongDuration(duration_ms)}
       </Item>
     );
-  }
+  };
 
   render() {
     return (
