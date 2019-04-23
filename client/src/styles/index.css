@@ -122,6 +122,10 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
   background-color: transparent !important;
 }
 
+.album-cover {
+  border-radius: 50%;
+}
+
 @media screen and (max-width: 834px) {
   .song-info {
     font-size: 12px;

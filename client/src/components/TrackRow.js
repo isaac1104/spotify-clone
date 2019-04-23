@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Tag, Typography, List, Avatar } from 'antd';
+import { SimpleImg } from 'react-simple-img';
+import { Tag, Typography, List } from 'antd';
 import { fetchCurrentSongData } from '../actions';
 
 const { Item } = List;
@@ -46,6 +47,17 @@ class TrackRow extends Component {
     );
   };
 
+  renderAlbumCover(url) {
+    return (
+      <SimpleImg
+        className='album-cover'
+        width={80}
+        height={80}
+        src={url}
+      />
+    );
+  };
+
   renderTracks() {
     const { album, artists, name, explicit, duration_ms, preview_url } = this.props.data;
 
@@ -60,7 +72,7 @@ class TrackRow extends Component {
         onClick={() => this.props.fetchCurrentSongData({ album, artists, name, preview_url })}
       >
         <Item.Meta
-          avatar={<Avatar size={64} src={album.images[2].url} />}
+          avatar={this.renderAlbumCover(album.images[2].url)}
           title={name}
           description={
             <Typography className='song-info'>
