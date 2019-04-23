@@ -28,6 +28,24 @@ class TrackRow extends Component {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
+  renderArtistsName(artists) {
+    return artists.map(artist => artists.indexOf(artist) === artists.length - 1 ? artist.name : `${artist.name}, `);
+  }
+
+  renderExplicitTag(explicit) {
+    return explicit ? <Tag className='explicit-tag'>Explicit</Tag> : null;
+  }
+
+  renderSongDuration(duration) {
+    return (
+      <div>
+        <Typography className='song-duration'>
+          {this.convertMsToMinSec(duration)}
+        </Typography>
+      </div>
+    );
+  }
+
   renderTracks() {
     const { album, artists, name, explicit, duration_ms, preview_url } = this.props.data;
 
@@ -46,20 +64,12 @@ class TrackRow extends Component {
           title={name}
           description={
             <Typography className='song-info'>
-              {explicit ? <Tag className='explicit-tag'>Explicit</Tag> : null}
-              {artists.map(artist => {
-                if (artists.indexOf(artist) === artists.length - 1) {
-                  return artist.name;
-                } else {
-                  return `${artist.name}, `;
-                }
-              })} - {album.name}
+              {this.renderExplicitTag(explicit)}
+              {this.renderArtistsName(artists)} - {album.name}
             </Typography>
           }
         />
-        <div>
-          <Typography className='song-duration'>{this.convertMsToMinSec(duration_ms)}</Typography>
-        </div>
+        {this.renderSongDuration(duration_ms)}
       </Item>
     );
   }
