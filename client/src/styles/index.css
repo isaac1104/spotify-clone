@@ -192,3 +192,9 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
     height: 50px !important;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .ant-layout-sider {
+    display: none;
+  }
+}
