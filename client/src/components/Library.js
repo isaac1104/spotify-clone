@@ -37,13 +37,13 @@ class Library extends Component {
         trigger='click'
         placement='left'
       >
-        <Typography style={styles.signout.btn}>
+        <Typography style={styles.signout.btn} className='user-avatar'>
           <Avatar
             src={photo}
             alt={displayName}
             style={styles.signout.avatar}
           />
-          {displayName}
+          <span className='user-display-name'>{displayName}</span>
         </Typography>
       </Popover>
     );

@@ -198,3 +198,14 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
     display: none;
   }
 }
+
+@media screen and (max-width: 515px) {
+  .user-avatar {
+    position: absolute;
+    top: 2em;
+    right: 0.3em;
+  }
+  .user-display-name {
+    display: none;
+  }
+}
