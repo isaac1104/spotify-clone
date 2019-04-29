@@ -30,7 +30,7 @@ class TrackRow extends Component {
   };
 
   renderArtistsName(artists) {
-    return artists.map(artist => artists.indexOf(artist) === artists.length - 1 ? artist.name : `${artist.name}, `);
+    return artists.map(artist => artists.indexOf(artist) === artists.length - 1 ? `${artist.name} ` : `${artist.name}, `);
   };
 
   renderExplicitTag(explicit) {
@@ -75,9 +75,14 @@ class TrackRow extends Component {
           avatar={this.renderAlbumCover(album.images[2].url)}
           title={name}
           description={
-            <Typography className='song-info'>
+            <Typography>
               {this.renderExplicitTag(explicit)}
-              {this.renderArtistsName(artists)} - {album.name}
+              <span className='song-artist'>
+                {this.renderArtistsName(artists)}
+              </span>
+              <span className='song-album'>
+                - {album.name}
+              </span>
             </Typography>
           }
         />

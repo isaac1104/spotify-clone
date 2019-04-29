@@ -128,7 +128,7 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 }
 
 @media screen and (max-width: 834px) {
-  .song-info {
+  .song-artist, .song-album {
     font-size: 12px;
   }
   .song-duration {
@@ -143,7 +143,7 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 }
 
 @media screen and (max-width: 480px) {
-  .song-info {
+  .song-artist, .song-album {
     font-size: 10px;
   }
   .song-duration {
@@ -158,7 +158,7 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 }
 
 @media screen and (max-width: 425px) {
-  .song-info {
+  .song-album {
     display: none;
   }
   .song-duration {
