@@ -53,14 +53,13 @@ class Library extends Component {
     return (
       <div className='loadmore-btn-container'>
         <Button
+          icon='more'
           size='small'
           shape='round'
           className='loadmore-btn'
           loading={isFetchingMore}
           onClick={() => this.props.fetchMoreTracks(next)}
-        >
-          {isFetchingMore ? 'Loading...' : 'Load More'}
-        </Button>
+        />
       </div>
     );
   };
