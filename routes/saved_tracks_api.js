@@ -1,7 +1,8 @@
 const axios = require('axios');
+const requireAuth = require('../middlewares/requireAuth');
 
 module.exports = app => {
-  app.get('/api/saved_tracks', async (req, res) => {
+  app.get('/api/saved_tracks', requireAuth, async (req, res) => {
     try {
       const { accessToken } = req.user;
       const request = await axios.get('https://api.spotify.com/v1/me/tracks?market=US&limit=50', { headers: { Authorization: `Bearer ${accessToken}` } });
