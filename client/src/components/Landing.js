@@ -8,8 +8,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundColor: '#0f0f0f',
-    backgroundImage: 'linear-gradient(315deg, #2d3436 0%, #0f0f0f 74%)',
+    backgroundImage: 'linear-gradient( 117.5deg,  rgba(89,233,162,1) 20.5%, rgba(29,209,185,1) 100.2% )',
     textAlign: 'center'
   },
   logo: {
