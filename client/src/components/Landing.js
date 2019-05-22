@@ -14,6 +14,9 @@ const styles = {
   logo: {
     width: '25em',
     marginBottom: '2em'
+  },
+  button: {
+    backgroundColor: '#404041'
   }
 };
 
@@ -29,6 +32,7 @@ const Landing = () => (
         shape='round'
         href='/auth/spotify'
         className='login-btn'
+        style={styles.button}
       >
         Sign In
       </Button>
