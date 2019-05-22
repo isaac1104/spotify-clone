@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 import { Button } from 'antd';
 import logo from '../assets/logo.png';
 
@@ -23,19 +24,21 @@ const styles = {
 const Landing = () => (
   <div style={styles.container}>
     <div>
-      <div>
-        <img src={logo} alt='logo' style={styles.logo} />
-      </div>
-      <Button
-        block
-        size='large'
-        shape='round'
-        href='/auth/spotify'
-        className='login-btn'
-        style={styles.button}
-      >
-        Sign In
-      </Button>
+      <Fade>
+        <div>
+          <img src={logo} alt='logo' style={styles.logo} />
+        </div>
+        <Button
+          block
+          size='large'
+          shape='round'
+          href='/auth/spotify'
+          className='login-btn'
+          style={styles.button}
+        >
+          Sign In
+        </Button>
+      </Fade>
     </div>
   </div>
 );
