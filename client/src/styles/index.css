@@ -12,11 +12,11 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 }
 
 .anticon-spin {
-  color: #00aca4 !important;
+  color: #1DD1B9 !important;
 }
 
 .ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
-  border-left: #00aca4 solid 0.15em !important;
+  border-left: #1DD1B9 solid 0.15em !important;
   background-color: transparent !important;
 }
 
@@ -43,19 +43,20 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 }
 
 .react-h5-audio-player .flex {
-  background-color: #2f3136 !important;
+  background-color: #404041 !important;
+  box-shadow: none !important;
 }
 
 .pause-icon {
-  box-shadow: #00aca4 7px 0px 0px 0px inset !important;
+  box-shadow: #1DD1B9 7px 0px 0px 0px inset !important;
 }
 
 .indicator, .toggle-play-button {
-  background-color: #00aca4 !important;
+  background-color: #1DD1B9 !important;
 }
 
 .volumn {
-  border-bottom: 15px solid #00aca4 !important;
+  border-bottom: 15px solid #1DD1B9 !important;
 }
 
 .ant-avatar-circle {
@@ -75,27 +76,27 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 }
 
 .login-btn {
-  background-color: #00aca4;
-  border: 1px solid #00aca4 !important;
+  background-color: #1DD1B9;
+  border: 1px solid #1DD1B9 !important;
   color: #ffffff;
 }
 
 .login-btn:hover {
-  background-color: #00aca4;
-  border: 1px solid #00aca4 !important;
+  background-color: #1DD1B9;
+  border: 1px solid #1DD1B9 !important;
   opacity: 0.9;
 }
 
 .loadmore-btn {
-  background-color: #00aca4;
-  border: 1px solid #00aca4 !important;
+  background-color: #1DD1B9;
+  border: 1px solid #1DD1B9 !important;
   text-align: center;
   color: #ffffff;
 }
 
 .loadmore-btn:hover {
-  background-color: #00aca4;
-  border: 1px solid #00aca4 !important;
+  background-color: #1DD1B9;
+  border: 1px solid #1DD1B9 !important;
   opacity: 0.9;
 }
 
@@ -107,15 +108,15 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 }
 
 .signout-btn {
-  background-color: #00aca4;
-  border: 1px solid #00aca4 !important;
+  background-color: #1DD1B9;
+  border: 1px solid #1DD1B9 !important;
   text-align: center;
   color: #ffffff;
 }
 
 .signout-btn:hover {
-  background-color: #00aca4;
-  border: 1px solid #00aca4 !important;
+  background-color: #1DD1B9;
+  border: 1px solid #1DD1B9 !important;
   opacity: 0.9;
 }
 

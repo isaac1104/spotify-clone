@@ -10,7 +10,7 @@ const styles = {
     bottom: 0,
     width: '100%',
     height: '6em',
-    backgroundColor: '#2f3136',
+    backgroundColor: '#404041',
     color: '#ffffff',
     display: 'flex',
     alignItems: 'center',
