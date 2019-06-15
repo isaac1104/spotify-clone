@@ -86,7 +86,7 @@ class Library extends Component {
             itemLayout='horizontal'
             dataSource={data.items}
             renderItem={item => <TrackRow key={item.track.id} data={item.track} />}
-            loadMore={data.next ? this.renderLoadMoreBtn(isFetchingMore, data.next): null}
+            loadMore={data.next ? this.renderLoadMoreBtn(isFetchingMore, data.next) : null}
           />
         </>
       );

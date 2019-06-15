@@ -10,7 +10,8 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: '1em'
+    marginBottom: '1em',
+    zoom: 0.85
   },
   infoContainer: {
     display: 'flex',
