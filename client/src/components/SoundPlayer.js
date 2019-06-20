@@ -19,6 +19,22 @@ const styles = {
 };
 
 class SoundPlayer extends Component {
+  componentDidMount() {
+    window.addEventListener('keydown', this.toggleSoundPlayer);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.toggleSoundPlayer);
+  }
+
+  toggleSoundPlayer = e => {
+    const { data } = this.props.currentSong;
+    if (e.keyCode === 32 && data) {
+      e.preventDefault();
+      return this.player.togglePlay();
+    }
+  }
+
   renderSoundPlayer() {
     const { currentUser: { data }, currentSong: { data: { preview_url, album } }, savedTracks: { isFetching } } = this.props;
 
@@ -42,6 +58,7 @@ class SoundPlayer extends Component {
               autoPlay={preview_url ? true : false}
               src={preview_url}
               progressUpdateInterval={50}
+              ref={c => (this.player = c)}
             />
           </Col>
         </Footer>
