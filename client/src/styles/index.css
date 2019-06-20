@@ -3,8 +3,54 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: linear-gradient( 117.5deg,  rgba(89,233,162,1) 20.5%, rgba(29,209,185,1) 100.2% );
+  background-image: linear-gradient( 117.5deg,  #23a6d5 20.5%, #1dd1b9 100.2% );
   font-family: 'Montserrat', sans-serif;
+}
+
+/* Gradient Background Animation per https://codepen.io/P1N2O/pen/pyBNzX */
+
+.landing-container {
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23a6d5, #1dd1b9);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
 
 h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.ant-typography, h6.ant-typography, p, .ant-typography {
@@ -83,13 +129,13 @@ h1.ant-typography, h2.ant-typography, h3.ant-typography, h4.ant-typography, h5.a
 
 .login-btn {
   background-color: #1DD1B9;
-  border: 1px solid #1DD1B9 !important;
+  border: none;
   color: #ffffff;
 }
 
 .login-btn:hover {
   background-color: #1DD1B9;
-  border: 1px solid #1DD1B9 !important;
+  border: 1px solid #ffffff !important;
   opacity: 0.9;
 }
 

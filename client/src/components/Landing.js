@@ -9,7 +9,6 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundImage: 'linear-gradient( 117.5deg,  rgba(89,233,162,1) 20.5%, rgba(29,209,185,1) 100.2% )',
     textAlign: 'center'
   },
   logo: {
@@ -22,7 +21,7 @@ const styles = {
 };
 
 const Landing = () => (
-  <div style={styles.container}>
+  <div style={styles.container} className='landing-container'>
     <div>
       <Fade>
         <div>
