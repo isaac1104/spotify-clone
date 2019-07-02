@@ -1,6 +1,5 @@
 import React, { Component, Suspense, lazy } from 'react';
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
-import { createBrowserHistory, createHashHistory } from 'history';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Layout, Spin, Icon } from 'antd';
 import { fetchCurrentUserData } from '../actions';
@@ -18,9 +17,8 @@ class App extends Component {
   }
 
   render() {
-    const history = window.matchMedia('(display-mode: standalone)').matches ? createHashHistory() : createBrowserHistory();
     return (
-      <Router history={history}>
+      <BrowserRouter>
         <Layout>
           <Sidebar />
           <ContentLayout>
@@ -51,7 +49,7 @@ class App extends Component {
           </ContentLayout>
           <SoundPlayer />
         </Layout>
-      </Router>
+      </BrowserRouter>
     );
   }
 }
