@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import AudioPlayer from 'react-h5-audio-player';
 import { Avatar, Col, Layout } from 'antd';
 
@@ -68,9 +69,24 @@ class SoundPlayer extends Component {
     return null;
   }
 
+  renderDocumentTitle() {
+    const { data } = this.props.currentSong;
+
+    if (data) {
+      return (
+        <Helmet>
+          <title>{data.name}</title>
+        </Helmet>
+      );
+    }
+
+    return null;
+  }
+
   render() {
     return (
       <>
+        {this.renderDocumentTitle()}
         {this.renderSoundPlayer()}
       </>
     );
